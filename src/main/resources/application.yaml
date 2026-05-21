@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: batch
+  datasource:
+    url: jdbc:h2:~/batch_db;MODE=MySQL;DATABASE_TO_LOWER=TRUE;
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: update
+  batch:
+    jdbc:
+      initialize-schema: always
+    job:
+      name: ${job.name:NONE}
